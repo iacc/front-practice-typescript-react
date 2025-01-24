@@ -10,7 +10,7 @@ export const Practice4 = () => {
   return (
     <ul>
       {items.map((item) => (
-        <li>
+        <li key={item.id}>
           {item.id}:{item.name}
         </li>
       ))}
