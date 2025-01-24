@@ -7,5 +7,11 @@ export const Practice4 = () => {
     { id: 2, name: 'Banana' },
     { id: 3, name: 'Cherry' },
   ];
-  return <ul>{/* items配列を使ってリストを作成してください */}</ul>;
+  return (
+    <ul>
+      {items.map((item) => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
 };
