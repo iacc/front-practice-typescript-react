@@ -8,6 +8,19 @@ const input = document.querySelector('input');
 // エラーを解消してください。
 
 // 以下のコメントを外して問題を解く
-// button.onclick = () => {
-//   console.log(`Input length: ${input.length}`);
-// };
+
+if (button instanceof HTMLButtonElement && input instanceof HTMLInputElement) {
+  button.onclick = () => {
+    console.log(`Input length: ${input.value.length}`);
+  };
+}
+
+// 解答例
+// const buttonAnswer = document.querySelector('button');
+// const inputAnswer = document.querySelector('input');
+
+// if (button && input) {
+//   button.onclick = () => {
+//     console.log(`Input length: ${input.value.length}`);
+//   };
+// }
