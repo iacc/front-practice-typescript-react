@@ -10,6 +10,8 @@
 // ボタンコンポーネントを作成して、商品ごとに再利用する。
 // ボタンコンポーネントを別のファイルに切り出す。
 
+import { Button } from './button';
+
 export const Practice5 = () => {
   const products = [
     { id: 1, name: 'Apple', price: 100 },
@@ -18,7 +20,13 @@ export const Practice5 = () => {
   ];
 
   return (
-    <>
-    </>
+    <ul>
+      {products.map((product) => (
+        <li key={product.id}>
+          {product.name}
+          <Button name={product.name} price={product.price} />
+        </li>
+      ))}
+    </ul>
   );
 };
