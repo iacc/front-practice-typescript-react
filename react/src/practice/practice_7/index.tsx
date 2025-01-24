@@ -1,6 +1,8 @@
 // 問題2: useEffectを使ったデータ取得
 // 以下の条件を満たすデータ取得コンポーネントを作成してください：
 
+import { useEffect, useState } from 'react';
+
 // コンポーネントがマウントされたときにfetchDataからデータを取得します。
 // データ取得中は「Loading...」と表示します。
 // データ取得後は、取得した内容をリスト形式で表示します。
@@ -23,5 +25,35 @@ const fetchData = () => {
 };
 
 export const Practice7 = () => {
-  return <>{/* コードをここに書いてください */}</>;
-}
+  const [data, setData] = useState<DataItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const result = await fetchData();
+        setData(result);
+      } catch (error) {
+        console.error('Failed Data Fetch', error);
+      }
+
+      setLoading(false);
+    };
+
+    getData();
+  }, []);
+
+  return (
+    <div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <ul>
+          {data?.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};

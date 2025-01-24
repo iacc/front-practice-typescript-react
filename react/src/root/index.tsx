@@ -3,6 +3,7 @@ import { Practice2 } from '@/practice/practice_2';
 import { Practice3 } from '@/practice/practice_3';
 import { Practice4 } from '@/practice/practice_4';
 import { Practice5 } from '@/practice/practice_5';
+import { Practice7 } from '@/practice/practice_7';
 
 export const Root = () => {
   return (
@@ -12,6 +13,7 @@ export const Root = () => {
       <Practice3 />
       <Practice4 />
       <Practice5 />
+      <Practice7 />
     </>
   );
 };
