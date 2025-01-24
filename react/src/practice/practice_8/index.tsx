@@ -2,6 +2,8 @@
 // 条件
 // 以下の条件を満たすReactコンポーネントを作成してください：
 
+import { useEffect, useState } from 'react';
+
 // ウィンドウサイズが変更されるたびに、その幅を画面に表示します。
 // リサイズ処理はuseEffectを使用して管理してください。
 // クリーンアップ処理:
@@ -15,5 +17,13 @@
 // イベントリスナーの解除は、window.removeEventListenerを使用します。
 
 export const Practice8 = () => {
-  return <>{/* コードをここに書いてください */}</>;
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const resize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, []);
+  return <>{width}</>;
 };
