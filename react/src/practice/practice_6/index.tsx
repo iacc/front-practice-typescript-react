@@ -9,16 +9,29 @@ import { useState } from 'react';
 
 export const Practice6 = () => {
   const start = 0;
-  const [num, countNum] = useState<number>(start);
-  const increment = () => countNum(num + 1);
-  const decrement = () => countNum(num - 1);
-  const reset = () => countNum(start);
+  const [count, setCount] = useState<number>(start);
+  const handleIncrease = (num: number) => {
+    num++;
+    num++;
+    return num;
+  };
+
+  // const increase = () => setCount((prevCount) => prevCount + 1);
+  // const increase = () => setCount(handleIncrease(count));
+  const increase = () => {
+    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  // const increase = () => setCount((count) => count + 1);
+  const decrement = () => setCount((count) => count - 1);
+  const reset = () => setCount(start);
   return (
     <>
-      {num}
+      {count}
       <ul>
         <li>
-          <button onClick={increment}>+1</button>
+          <button onClick={increase}>+1</button>
         </li>
 
         <li>
