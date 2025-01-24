@@ -1,6 +1,7 @@
 // 演習５：商品リストの作成
 
 import { Button } from '@/practice/_components/button';
+import { Counter } from '@/practice/practice_6';
 
 // MUST要件
 // 商品リストを表示する。(例：Apple, Banana, Cherry)
@@ -31,6 +32,7 @@ export const Practice5 = () => {
           >
             詳細を見る
           </Button>
+          <Counter />
         </li>
       ))}
     </ul>
